@@ -1,0 +1,23 @@
+{
+    "success":{
+        "generic":"Command successful."
+    },
+    "error":
+    {
+        "generic":"Command was unsuccessful.",
+        "too_many_args":"You provided too many arguments for that command.",
+        "missing_channel":"That channel does not exist.",
+        "missing_role":"That role does not exist.",
+        "no_lobby_defined":"There is no lobby defined on this server.",
+        "no_lobby_msg_remove":"There is no lobby message to remove."
+    },
+    "special":
+    {
+        "eula_accept":"To access this server you must accept the EULA by clicking on the green check-mark below."
+    },
+    "reactions":
+    {
+        "accept":"✅",
+        "reject":"🇽"
+    }
+}

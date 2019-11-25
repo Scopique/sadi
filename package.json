@@ -1,0 +1,26 @@
+{
+  "name": "runner",
+  "version": "1.0.0",
+  "description": "Self-Aware Digital Interface - A Discord Bot for a Star Citizen Discord",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Scopique/sadi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Scopique/sadi/issues"
+  },
+  "homepage": "https://github.com/Scopique/sadi#readme",
+  "dependencies": {
+    "discord.js": "^11.5.1"
+  }
+}
