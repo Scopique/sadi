@@ -1,13 +1,11 @@
 /***************************************************************
- *                       WOMBOT
- *                  AKA Watching Wombat
- * A Discord bot built for The Wombattery Discord community
- *              http://discord.gg/DCCUVte
+ *                       SADI
+ *            Self-Aware Digital Interface
+*     A Discord bot for a Star Citizen Discord server.
  *--------------------------------------------------------------
  *  Lobby: Requires all invitees to accept a EULA for access
- *  Member XP: Participation unlocks perks
  *  Profiles: Additional social media info for each user
- *  Streamers: Go Live notifications to a specific channel
+ *  SADI: Help and settings
 *--------------------------------------------------------------
  * https://discordapp.com/oauth2/authorize?client_id=[CLIENT_ID_HERE]&scope=bot&permissions=1879436534
  **************************************************************/
@@ -71,7 +69,7 @@ client.on("message", (message) => {
         command.execute(message, args, settings);
     } catch (e) {
         console.log(`\nError occured:\nUser: ${message.author.username}\nChannel: ${message.channel.name}\nCommand: ${commandName}\nArgs: ${args}\nError: ${e}\n`);
-        message.channel.send(`Oops! That command didn't work! Usage is ${command.usage}`);
+       message.channel.send(`Oops! That command didn't work! Usage is ${command.usage}`);
     }
 });
 

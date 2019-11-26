@@ -1,0 +1,14 @@
+Discord JS general help
+https://discordjs.guide/additional-info/changes-in-v12.html#client
+
+API Docs
+https://discord.js.org/#/docs/main/stable/general/welcome
+
+Discord Apps Portal
+https://discordapp.com/developers/applications/
+
+Discord bot and Repl.it Setup Tutorial 
+https://www.codementor.io/garethdwyer/building-a-discord-bot-with-node-js-and-repl-it-mm46r1u8y
+
+Star Citizen API (Unofficial)
+https://starcitizen-api.com/startup.php

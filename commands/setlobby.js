@@ -13,7 +13,7 @@
  * at bare minimum has permission to see and read history for 
  * whatever other channels the admin decides a new user should see.
  **************************************************************/
-const {success:_success, error:_error, special:_special, reactions:_reactions} = require("../config/replies.json");
+const {success:_success, error:_error, special:_special, reactions:_reactions, sadi:_sadi} = require("../config/replies.json");
 
 module.exports={
     name: "lobby",
@@ -25,7 +25,7 @@ module.exports={
         //0 args will print the usage
         //1 arg is either rebuild or remove
         //2 args is assignment
-        //2+ args is wrong, and we've already trapped for no args in Main
+        //2+ args is wrong
         if (args.length == 0){
           message.channel.send("[Channel_Name][Role_To_Grant] | reset | remove");
         }
@@ -54,7 +54,7 @@ module.exports={
                         break;
                 }
             }else{
-                message.channels.send(_error.no_lobby_defined);
+                message.channel.send(_error.no_lobby_defined);
             }
           }
         }
@@ -115,11 +115,18 @@ module.exports={
                         okUser.addRole(settings.lobby.acceptRoleID);  
                         console.log(`${user.username} was granted the ${settings.lobby.acceptRole} role`);
                         //DM them something welcoming them to the server. Should be configurable by the admin somehow.
+
+                      const _newDM = okUser.createDM();
+                      _newDM.then((ch)=>{
+                        ch.send(_sadi.welcome_dm);
+                      })
+                      .catch((err)=>{console.log(err)});
+
+
                     }catch (ex)
                     {
                         console.log(ex);
                     }
-                    
                 }
                 else if((reaction.emoji.name === _reactions.reject) && !user.bot){
                     let okUser = message.guild.members.get(user.id);
@@ -130,6 +137,7 @@ module.exports={
             case "MESSAGE_REACTION_REMOVE":
                 //If the user opts to remove his or her click...no one cares
                 //No user can remove the emoji because the bot put it there. 
+                //Problem is...should the user be able to revoke his/her own role this way?
                 break;
         }
     }

@@ -4,6 +4,7 @@
     },
     "error":
     {
+        "not_yet_implemented": "Sorry. This command is not finished yet, but we're working on it!",
         "generic":"Command was unsuccessful.",
         "too_many_args":"You provided too many arguments for that command.",
         "missing_channel":"That channel does not exist.",
@@ -19,5 +20,9 @@
     {
         "accept":"✅",
         "reject":"🇽"
+    },
+    "sadi":
+    {
+      "welcome_dm":"Welcome to [CORP_NAME]!\nI am S.A.D.I. - a Self-Aware Digital Interface. I'm pleased to meet you, [USER_NAME]!\nLet's get you set up, shall we?\n\nTo start, have you considered what you'd like to do in Star Citizen?\n[1] Explore  [2] Mine and Harvest [3] Trade and Shipping  [4] Fight [5] Other?\n\n[CORP_NAME] can help you achieve your goals!\n\nNext, what ships do you currently own?\n[A] ... [Z] //Might have to double up, like 'Mustang Variant'Fantastic!\n\nWell, that's about all we need for paperwork! The next step is to get out there into #thelounge and introduce yourself if you haven't already. If you have any questions, I can try and answer those for you. Just type !sadi info [SUBJECT], where [SUBJECT] is one of the following:\nPOLICIES\nMEMBERS\nEVENTS\nAFFILIATION\nCOMMANDS\n\nOne again, we welcome you to [CORP_NAME] and look forward to a prosperous and enjoyable partnership with you in the 'verse.\n"
     }
 }
