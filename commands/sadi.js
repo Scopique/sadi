@@ -43,8 +43,9 @@ module.exports={
           message.channel.send(_error.not_yet_implemented);
           break;
         case "ship":
-          scapi.GetShip("Aurora");
-          message.channel.send(_error.not_yet_implemented);
+          const _shipInfo = scapi.GetShip(args[1], message);
+          //console.log(_shipInfo)
+          //message.channel.send(_shipInfo);
           break;
         default:
           break;
