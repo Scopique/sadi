@@ -1,0 +1,467 @@
+{
+	"0": {
+		"model": "Aurora",
+		"variants": {
+			"0": "ES",
+			"1": "LX",
+			"2": "MR",
+			"3": "CL",
+			"4": "LN"
+		}
+	},
+	"1": {
+		"model": "300i",
+		"variants": {}
+	},
+	"2": {
+		"model": "315p",
+		"variants": {}
+	},
+	"3": {
+		"model": "325a",
+		"variants": {}
+	},
+	"4": {
+		"model": "350r",
+		"variants": {}
+	},
+	"5": {
+		"model": "Hornet",
+		"variants": {
+			"0": "F7C",
+			"1": "F7C-S|Ghost",
+			"2": "F7C-R|Tracker",
+			"3": "F7C-M Super",
+			"4": "F7A",
+			"5": "F7C-M Super|Heartseeker"
+		}
+	},
+	"6": {
+		"model": "Constellation",
+		"variants": {
+			"0": "Aquila",
+			"1": "Andromeda",
+			"2": "Taurus",
+			"3": "Phoenix"
+		}
+	},
+	"7": {
+		"model": "Freelancer",
+		"variants": {
+			"0": "DUR",
+			"1": "MAX",
+			"2": "MIS"
+		}
+	},
+	"8": {
+		"model": "Cutlass",
+		"variants": {
+			"0": "Black",
+			"1": "Red",
+			"2": "Blue"
+		}
+	},
+	"9": {
+		"model": "Avenger",
+		"variants": {
+			"0": "Stalker",
+			"1": "Titan",
+			"2": "Warlock"
+		}
+	},
+	"10": {
+		"model": "Gladiator",
+		"variants": {}
+	},
+	"11": {
+		"model": "M50",
+		"variants": {}
+	},
+	"12": {
+		"model": "Starfarer",
+		"variants": {
+			"0": "Gemini"
+		}
+	},
+	"13": {
+		"model": "Caterpillar",
+		"variants": {}
+	},
+	"14": {
+		"model": "Retaliator",
+		"variants": {
+			"0": "Bomber",
+			"1": "Base"
+		}
+	},
+	"15": {
+		"model": "Scythe",
+		"variants": {}
+	},
+	"16": {
+		"model": "Idris-M",
+		"variants": {}
+	},
+	"17": {
+		"model": "Idris-P",
+		"variants": {}
+	},
+	"18": {
+		"model": "P-52",
+		"variants": {
+			"0": "Merlin"
+		}
+	},
+	"19": {
+		"model": "Mustang",
+		"variants": {
+			"0": "Alpha",
+			"1": "Beta",
+			"2": "Gamma",
+			"3": "Delta",
+			"4": "Omega"
+		}
+	},
+	"20": {
+		"model": "Redeemer",
+		"variants": {}
+	},
+	"21": {
+		"model": "Gladius",
+		"variants": {
+			"0": "Valiant"
+		}
+	},
+	"22": {
+		"model": "Khartu-Al",
+		"variants": {}
+	},
+	"23": {
+		"model": "Merchantman",
+		"variants": {}
+	},
+	"24": {
+		"model": "890",
+		"variants": {
+			"0": "Jump"
+		}
+	},
+	"25": {
+		"model": "Carrack",
+		"variants": {}
+	},
+	"26": {
+		"model": "Herald",
+		"variants": {}
+	},
+	"27": {
+		"model": "Hull",
+		"variants": {
+			"0": "C",
+			"1": "A",
+			"2": "B",
+			"3": "D",
+			"4": "E"
+		}
+	},
+	"28": {
+		"model": "Orion",
+		"variants": {}
+	},
+	"29": {
+		"model": "Reclaimer",
+		"variants": {}
+	},
+	"30": {
+		"model": "Javelin",
+		"variants": {}
+	},
+	"31": {
+		"model": "Vanguard",
+		"variants": {
+			"0": "Warden",
+			"1": "Harbinger",
+			"2": "Sentinel",
+			"3": "Hoplite"
+		}
+	},
+	"32": {
+		"model": "Reliant",
+		"variants": {
+			"0": "Kore",
+			"1": "Mako",
+			"2": "Sen",
+			"3": "Tana"
+		}
+	},
+	"33": {
+		"model": "Genesis",
+		"variants": {
+			"0": "Starliner"
+		}
+	},
+	"34": {
+		"model": "Glaive",
+		"variants": {}
+	},
+	"35": {
+		"model": "Endeavor",
+		"variants": {}
+	},
+	"36": {
+		"model": "Sabre",
+		"variants": {
+			"0": "Comet",
+			"1": "Raven"
+		}
+	},
+	"37": {
+		"model": "Crucible",
+		"variants": {}
+	},
+	"38": {
+		"model": "P72",
+		"variants": {
+			"0": "Archimedes"
+		}
+	},
+	"39": {
+		"model": "Blade",
+		"variants": {}
+	},
+	"40": {
+		"model": "Prospector",
+		"variants": {}
+	},
+	"41": {
+		"model": "Buccaneer",
+		"variants": {}
+	},
+	"42": {
+		"model": "Dragonfly",
+		"variants": {
+			"0": "Yellowjacket",
+			"1": "Black"
+		}
+	},
+	"43": {
+		"model": "MPUV",
+		"variants": {
+			"0": "Personnel",
+			"1": "Cargo"
+		}
+	},
+	"44": {
+		"model": "Terrapin",
+		"variants": {}
+	},
+	"45": {
+		"model": "Polaris",
+		"variants": {}
+	},
+	"46": {
+		"model": "Prowler",
+		"variants": {}
+	},
+	"47": {
+		"model": "85X",
+		"variants": {}
+	},
+	"48": {
+		"model": "Razor",
+		"variants": {
+			"0": "EX",
+			"1": "LX"
+		}
+	},
+	"49": {
+		"model": "Hurricane",
+		"variants": {}
+	},
+	"50": {
+		"model": "Banu",
+		"variants": {
+			"0": "Defender"
+		}
+	},
+	"51": {
+		"model": "Eclipse",
+		"variants": {}
+	},
+	"52": {
+		"model": "Nox",
+		"variants": {
+			"0": "Kue"
+		}
+	},
+	"53": {
+		"model": "Cyclone",
+		"variants": {
+			"0": "TR",
+			"1": "RC",
+			"2": "RN",
+			"3": "AA"
+		}
+	},
+	"54": {
+		"model": "Ursa",
+		"variants": {
+			"0": "Rover"
+		}
+	},
+	"55": {
+		"model": "600i",
+		"variants": {
+			"0": "Touring",
+			"1": "Explorer"
+		}
+	},
+	"56": {
+		"model": "X1",
+		"variants": {
+			"0": "Base",
+			"1": "Velocity",
+			"2": "Force"
+		}
+	},
+	"57": {
+		"model": "Pioneer",
+		"variants": {}
+	},
+	"58": {
+		"model": "Hawk",
+		"variants": {}
+	},
+	"59": {
+		"model": "Hammerhead",
+		"variants": {}
+	},
+	"60": {
+		"model": "Geotack",
+		"variants": {
+			"0": "Planetary"
+		}
+	},
+	"61": {
+		"model": "Geotack-X",
+		"variants": {
+			"0": "Planetary"
+		}
+	},
+	"62": {
+		"model": "Nova",
+		"variants": {}
+	},
+	"63": {
+		"model": "Vulcan",
+		"variants": {}
+	},
+	"64": {
+		"model": "100i",
+		"variants": {}
+	},
+	"65": {
+		"model": "125a",
+		"variants": {}
+	},
+	"66": {
+		"model": "135c",
+		"variants": {}
+	},
+	"67": {
+		"model": "Hercules",
+		"variants": {
+			"0": "C2",
+			"1": "M2",
+			"2": "A2"
+		}
+	},
+	"68": {
+		"model": "Vulture",
+		"variants": {}
+	},
+	"69": {
+		"model": "Apollo",
+		"variants": {
+			"0": "Triage",
+			"1": "Medivac"
+		}
+	},
+	"70": {
+		"model": "Mercury",
+		"variants": {
+			"0": "Star"
+		}
+	},
+	"71": {
+		"model": "Valkyrie",
+		"variants": {
+			"0": "Liberator"
+		}
+	},
+	"72": {
+		"model": "Kraken",
+		"variants": {}
+	},
+	"73": {
+		"model": "Arrow",
+		"variants": {}
+	},
+	"74": {
+		"model": "Santok.yÄi",
+		"variants": {}
+	},
+	"75": {
+		"model": "SRV",
+		"variants": {}
+	},
+	"76": {
+		"model": "Corsair",
+		"variants": {}
+	},
+	"77": {
+		"model": "Ranger",
+		"variants": {
+			"0": "RC",
+			"1": "TR",
+			"2": "CV"
+		}
+	},
+	"78": {
+		"model": "Anvil",
+		"variants": {
+			"0": "Ballista"
+		}
+	},
+	"79": {
+		"model": "Nautilus",
+		"variants": {
+			"0": "Solstice"
+		}
+	},
+	"80": {
+		"model": "Pirate",
+		"variants": {
+			"0": "Gladius"
+		}
+	},
+	"81": {
+		"model": "Mantis",
+		"variants": {}
+	},
+  "82": {
+    "model": "Carrack",
+    "variants": {}
+  },
+  "83": {
+    "model": "Pisces",
+    "variants": {
+      "0": "C8",
+      "1": "C8X"
+    }
+  },
+  "84": {
+    "model": "Mole",
+    "variants": {}
+  }
+}
