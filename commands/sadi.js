@@ -15,9 +15,7 @@ module.exports={
   description:"Get help from S.A.D.I.",
   args: false,
   usage: "!sadi [COMMAND]",
-  execute(message, args, core){
-    const {client:client, settings:settings} = core;
-    
+  execute(message, args, core){   
     /*
     [info] POLICIES | MEMBERS | EVENTS | AFFILIATION | COMMANDS
     [myships] VIEW | ADD | REMOVE
@@ -43,9 +41,12 @@ module.exports={
           message.channel.send(_error.not_yet_implemented);
           break;
         case "ship":
-          const _shipInfo = scapi.GetShip(args[1], message);
+          const _shipInfo = scapi.GetShip(args[1], message, core);
           //console.log(_shipInfo)
           //message.channel.send(_shipInfo);
+          break;
+        case "system":
+          const _systemInfo = scapi.GetSystem(args[1], message, core);
           break;
         default:
           break;

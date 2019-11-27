@@ -42,7 +42,7 @@
 			"0": "Aquila",
 			"1": "Andromeda",
 			"2": "Taurus",
-			"3": "Phoenix",
+			"3": "Phoenix"
 		}
 	},
 	"7": {
@@ -448,5 +448,20 @@
 	"81": {
 		"model": "Mantis",
 		"variants": {}
-	}
+	},
+  "82": {
+    "model": "Carrack",
+    "variants": {}
+  },
+  "83": {
+    "model": "Pisces",
+    "variants": {
+      "0": "C8",
+      "1": "C8X"
+    }
+  },
+  "84": {
+    "model": "Mole",
+    "variants": {}
+  }
 }

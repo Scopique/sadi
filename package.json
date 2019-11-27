@@ -22,6 +22,8 @@
   "homepage": "https://github.com/Scopique/sadi#readme",
   "dependencies": {
     "discord.js": "^11.5.1",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.0",
+    "utilities": "^1.0.5",
+    "utilities.js": "^1.0.15"
   }
 }

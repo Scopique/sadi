@@ -13,6 +13,7 @@
 /***************************************************************
  *                       REQUIRES
  **************************************************************/
+const keep_alive = require('./keep_alive.js')
 const fs = require("fs");
 const Discord = require('discord.js');
 const config = require("./config/config.json");

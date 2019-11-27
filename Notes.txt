@@ -10,5 +10,11 @@ https://discordapp.com/developers/applications/
 Discord bot and Repl.it Setup Tutorial 
 https://www.codementor.io/garethdwyer/building-a-discord-bot-with-node-js-and-repl-it-mm46r1u8y
 
+5 minute ping to keep the website and bot operational
+https://uptimerobot.com/
+
 Star Citizen API (Unofficial)
 https://starcitizen-api.com/startup.php
+
+AWS Web Server and Database with Amazon Linux
+https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/TUT_WebAppWithRDS.html
