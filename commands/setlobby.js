@@ -21,7 +21,8 @@ module.exports={
     description:"Requires new users arriving via invite link to agree to the server EULA before accessing the server.",
     args:false,
     usage:"[Channel_Name][Role_To_Grant] | reset | remove",
-    execute(message, args, settings){
+    execute(message, args, core){
+      const {client:client, settings:settings} = core;
         //0 args will print the usage
         //1 arg is either rebuild or remove
         //2 args is assignment

@@ -19,6 +19,7 @@ const Discord = require('discord.js');
 const config = require("./config/config.json");
 const fileops = require("./lib/fileaccess.js");
 const replies = require("./config/replies.json");
+const db = require("./lib/dbaccess.js");
 
 /***************************************************************
  *                       OBJECT SETUP
@@ -48,6 +49,10 @@ client.once('ready', () => {
     console.log('Ready!');
 });
 
+client.on('guildCreate', (guild)=>{
+  db.GuildRegister(guild);
+});
+
 //On message received in channel where bot is listening. Command handler
 client.on("message", (message) => {
     //We must have a prefix, or the msg is from the bot itself
@@ -67,7 +72,7 @@ client.on("message", (message) => {
         //  based on the name of the command matching a command in the .commands
         //  directory, which was parsed via the FileOps.LoadCommands function
         console.log(`Command ${commandName} issued by ${message.author.username} with args ${args}`);
-        command.execute(message, args, settings);
+        command.execute(message, args, core);
     } catch (e) {
         console.log(`\nError occured:\nUser: ${message.author.username}\nChannel: ${message.channel.name}\nCommand: ${commandName}\nArgs: ${args}\nError: ${e}\n`);
        message.channel.send(`Oops! That command didn't work! Usage is ${command.usage}`);
