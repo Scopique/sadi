@@ -28,3 +28,7 @@ or promise-mysql
 https://github.com/CodeFoodPixels/node-promise-mysql
 or Promisify in node.js
 https://codeburst.io/quick-dig-promisify-in-node-js-6d5d763f847d
+
+Async/await with mysql.js
+https://codeburst.io/node-js-mysql-and-async-await-6fb25b01b628
+https://nodejs.org/api/util.html#util_util_promisify_original
