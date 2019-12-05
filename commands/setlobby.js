@@ -14,6 +14,7 @@
  * whatever other channels the admin decides a new user should see.
  **************************************************************/
 const {success:_success, error:_error, special:_special, reactions:_reactions, sadi:_sadi} = require("../config/replies.json");
+const db = require("../lib/dbaccess.js")
 
 module.exports={
     name: "lobby",
@@ -116,6 +117,10 @@ module.exports={
                         okUser.addRole(settings.lobby.acceptRoleID);  
                         console.log(`${user.username} was granted the ${settings.lobby.acceptRole} role`);
                         //DM them something welcoming them to the server. Should be configurable by the admin somehow.
+
+                        //Add them to the database
+                        db.MemberRegister(message.guild.id, okUser)
+                        .then(rslt=>console.log(rslt));
 
                       const _newDM = okUser.createDM();
                       _newDM.then((ch)=>{
