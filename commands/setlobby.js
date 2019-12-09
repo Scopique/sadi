@@ -14,7 +14,7 @@
  * whatever other channels the admin decides a new user should see.
  **************************************************************/
 const {success:_success, error:_error, special:_special, reactions:_reactions, sadi:_sadi} = require("../config/replies.json");
-const db = require("../lib/dbaccess.js")
+const db = require("../lib/dbregistration.js")
 
 module.exports={
     name: "lobby",

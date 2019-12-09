@@ -46,7 +46,7 @@ module.exports={
           //message.channel.send(_shipInfo);
           break;
         case "system":
-          const _systemInfo = scapi.GetSystem(args[1], message, core);
+          const _systemInfo = scapi.GetSystem(args[1], message);
           break;
         default:
           break;

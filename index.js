@@ -19,7 +19,7 @@ const Discord = require('discord.js');
 const config = require("./config/config.json");
 const fileops = require("./lib/fileaccess.js");
 const replies = require("./config/replies.json");
-const db = require("./lib/dbaccess.js");
+const db = require("./lib/dbregistration.js");
 
 /***************************************************************
  *                       OBJECT SETUP

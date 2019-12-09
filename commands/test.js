@@ -1,5 +1,6 @@
 const fetch = require("node-fetch");
-const db = require('../lib/dbaccess.js');
+const db = require('../lib/dbregistration.js');
+const refresh = require("../lib/dbgamedata.js");
 const shipsAPI = process.env.SC_API_SHIPS_URI;  //Contains the API key to lookup via cache
 
 module.exports = {
@@ -15,8 +16,9 @@ module.exports = {
       //   .then(json=>parse(json));
 
       //MyIP();
-      const _guild = message.guild;
-      db.GuildRegister(_guild);
+      // const _guild = message.guild;
+      // db.GuildRegister(_guild);
+      refresh.RefreshData();
     }  
 }
 
