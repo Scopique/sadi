@@ -19,7 +19,6 @@ const Discord = require('discord.js');
 const config = require("./config/config.json");
 const fileops = require("./lib/fileaccess.js");
 const replies = require("./config/replies.json");
-const db = require("./lib/dbregistration.js");
 
 /***************************************************************
  *                       OBJECT SETUP
@@ -50,7 +49,7 @@ client.once('ready', () => {
 });
 
 client.on('guildCreate', (guild)=>{
-  db.GuildRegister(guild);
+  //Do something when the bot is added to a new guild.
 });
 
 //On message received in channel where bot is listening. Command handler
@@ -80,25 +79,19 @@ client.on("message", (message) => {
 });
 
 client.on("guildMemberUpdate", function(oldData, newData){
-  const removedRoles = oldData.roles.filter(role => !newData.roles.has(role.id));
-  if(removedRoles.size>0){ removedRoles.forEach(role=>db.RemoveRole(role.guild.id, oldData.user.id, role.id))}
+  // const removedRoles = oldData.roles.filter(role => !newData.roles.has(role.id));
+  // if(removedRoles.size>0){ removedRoles.forEach(role=>db.RemoveRole(role.guild.id, oldData.user.id, role.id))}
 
-  const addedRoles = newData.roles.filter(role =>!oldData.roles.has(role.id));
-  if(addedRoles.size>0){ addedRoles.forEach(role=>db.AssignRole(role.guild.id, oldData.user.id, role.id))}
+  // const addedRoles = newData.roles.filter(role =>!oldData.roles.has(role.id));
+  // if(addedRoles.size>0){ addedRoles.forEach(role=>db.AssignRole(role.guild.id, oldData.user.id, role.id))}
 });
 
 client.on("guildMemberAdd", function(mbr){
-  //Don't do this here. We need to add the member ONLY after
-  //  they have accepted the EULA and been granted a role.
-  // db.MemberRegister(mbr.guild.id, mbr)
-  // .then(rslt=>console.log(rslt));
+  
 })
 
 client.on("guildMemberRemove", function(mbr){
-  //console.log(mbr.guild.id);
-  db.MemberUnregister(mbr.guild.id, mbr.user.id)
-  .then(rslt=>console.log(rslt));
-  //console.log(mbr);
+  
 })
 
 //On ALL commands. Used to handle interaction with older reactions
@@ -115,8 +108,7 @@ client.on("raw", async event=>{
         }
     }
     else if(event.t === "GUILD_MEMBER_UPDATE"){
-      //Covers adding and removing roles, updating data, assigning a note, changing a nickname
-      //console.log(event);
+
     }
     else if(settings.auditEvents.hasOwnProperty(event.t)){
         // if (settings.outputChannel.level.toLowerCase() !== "none"){

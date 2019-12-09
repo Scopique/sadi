@@ -7,7 +7,6 @@
  * locations, and ship info, if we can latch onto an API.
  **************************************************************/
 const {success:_success, error:_error, special:_special, reactions:_reactions, sadi:_sadi} = require("../config/replies.json");
-const scapi = require("../lib/scapi.js");
 
 module.exports={
   name:"sadi",
@@ -41,12 +40,10 @@ module.exports={
           message.channel.send(_error.not_yet_implemented);
           break;
         case "ship":
-          const _shipInfo = scapi.GetShip(args[1], message, core);
-          //console.log(_shipInfo)
-          //message.channel.send(_shipInfo);
+          message.channel.send(_error.not_yet_implemented);
           break;
         case "system":
-          const _systemInfo = scapi.GetSystem(args[1], message);
+          message.channel.send(_error.not_yet_implemented);
           break;
         default:
           break;

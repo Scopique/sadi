@@ -1,6 +1,6 @@
 const fetch = require("node-fetch");
-const db = require('../lib/dbregistration.js');
-const refresh = require("../lib/dbgamedata.js");
+const scapi = require("../lib/scapi");
+
 const shipsAPI = process.env.SC_API_SHIPS_URI;  //Contains the API key to lookup via cache
 
 module.exports = {
@@ -15,10 +15,9 @@ module.exports = {
       //   .then(res=>res.json())
       //   .then(json=>parse(json));
 
-      //MyIP();
-      // const _guild = message.guild;
-      // db.GuildRegister(_guild);
-      refresh.RefreshData();
+      //scapi.RefreshAPIData();
+      scapi.RefreshMasterData();
+
     }  
 }
 
@@ -49,17 +48,7 @@ function parse(json){
       
     }
   }
-
-
-
-
-
   console.log(`${_cnt1} ships from JSON.`);
-
-  // Object.keys(_ships).forEach(function(k){
-  //   console.log(k + " - " + obj[k]);
-  // });
-
 
   console.log(`${_cnt2} ship secondary names.`);
 
@@ -89,29 +78,6 @@ function MyIP()
       ++alias;
     });
   });
-}
-
-function DBTest() {
-  var mysql      = require('mysql');
-  var connection = mysql.createConnection({
-    host     : 'scopique.com',
-    user     : 'scopiq6_sadi_admin',
-    password : 'k95o^HjAvYrqzHvu',
-    database : 'scopiq6_sadi_bot'
-  });
-
-  connection.connect();
-
-  connection.query('SELECT * from db_test', function (error, results, fields) {
-    if (error) throw error;
-    var _resCnt = Object.keys(results).length;
-    //console.log(_resCnt);
-    for(var i = 0; i < _resCnt; i++){
-      console.log(`ID is ${results[i]["ID"]} and the value is '${results[i]["Value"]}'`);
-    }
-  });
-
-  connection.end();
 }
 
 function makeBaseSettings()
