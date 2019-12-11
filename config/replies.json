@@ -19,7 +19,9 @@
     "reactions":
     {
         "accept":"✅",
-        "reject":"🇽"
+        "reject":"🇽",
+        "previous":"⏪",
+        "next":"⏩"
     },
     "sadi":
     {

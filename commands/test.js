@@ -1,5 +1,6 @@
 const fetch = require("node-fetch");
 const scapi = require("../lib/scapi");
+const cmdShips = require("../lib/sadi_cmds_ships.js");
 
 const shipsAPI = process.env.SC_API_SHIPS_URI;  //Contains the API key to lookup via cache
 
@@ -16,8 +17,9 @@ module.exports = {
       //   .then(json=>parse(json));
 
       //scapi.RefreshAPIData();
+      //scapi.RefreshMasterData();
       scapi.RefreshMasterData();
-
+      //cmdShips.QueryShipsByMfr("RSI");
     }  
 }
 

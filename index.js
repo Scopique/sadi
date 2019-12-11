@@ -19,6 +19,7 @@ const Discord = require('discord.js');
 const config = require("./config/config.json");
 const fileops = require("./lib/fileaccess.js");
 const replies = require("./config/replies.json");
+const rxcore = require("reaction-core");
 
 /***************************************************************
  *                       OBJECT SETUP
@@ -26,6 +27,7 @@ const replies = require("./config/replies.json");
 const client = new Discord.Client();
 const commands = new Discord.Collection();
 const events = new Discord.Collection();
+const rxhandler = new RC.Handler();
 
 /***************************************************************
  *                       ASSIGNMENTS
@@ -78,6 +80,8 @@ client.on("message", (message) => {
     }
 });
 
+client.on("messageReactionAdd", (messageReaction, user)=>handler.handle(messageReaction, user));
+
 client.on("guildMemberUpdate", function(oldData, newData){
   // const removedRoles = oldData.roles.filter(role => !newData.roles.has(role.id));
   // if(removedRoles.size>0){ removedRoles.forEach(role=>db.RemoveRole(role.guild.id, oldData.user.id, role.id))}
@@ -105,6 +109,8 @@ client.on("raw", async event=>{
         if (event.d.message_id === settings.lobby.messageID){
             let cmdLobby = commands.find(n=>n.name === "lobby");
             cmdLobby.HandleLobbyReaction(core, event);
+        }else{
+
         }
     }
     else if(event.t === "GUILD_MEMBER_UPDATE"){

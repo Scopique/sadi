@@ -116,11 +116,7 @@ module.exports={
                         okUser.addRole(settings.lobby.acceptRoleID);  
                         console.log(`${user.username} was granted the ${settings.lobby.acceptRole} role`);
                         //DM them something welcoming them to the server. Should be configurable by the admin somehow.
-
-                        //Add them to the database
-                        // db.MemberRegister(message.guild.id, okUser)
-                        // .then(rslt=>console.log(rslt));
-
+                        
                       const _newDM = okUser.createDM();
                       _newDM.then((ch)=>{
                         ch.send(_sadi.welcome_dm);
