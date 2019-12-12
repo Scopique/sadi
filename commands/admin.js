@@ -17,11 +17,22 @@ module.exports = {
         switch (args[0]){
           case "refresh":
             scapi.RefreshAPIData()
-            
+            break;
+          case "cleanup":
+            scapi.CleanFiles();
             break;
         }
       }else if (args.length > 1){
-        //Multiple. 
+        //Multiple. We can override the refresh timer
+        switch(args[0]){
+          case "refresh":
+            if (args[1].toLowerCase() == "override")
+            {
+              scapi.RefreshAPIData(true);
+            
+            break;
+            }
+        }
       }
     }  
 }
