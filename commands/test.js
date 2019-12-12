@@ -17,8 +17,9 @@ module.exports = {
       //   .then(json=>parse(json));
 
       //scapi.RefreshAPIData();
+      scapi.CleanFiles();
       //scapi.RefreshMasterData();
-      scapi.RefreshMasterData();
+      //scapi.RefreshMasterData();
       //cmdShips.QueryShipsByMfr("RSI");
     }  
 }

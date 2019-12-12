@@ -18,6 +18,7 @@ module.exports={
   args: false,
   usage: "!sadi [COMMAND]",
   execute(message, args, core){   
+
     /*
     [info] POLICIES | MEMBERS | EVENTS | AFFILIATION | COMMANDS
     [myships] VIEW | ADD | REMOVE
@@ -28,9 +29,14 @@ module.exports={
       //No args, so SADI should just say hello. Maybe give the time and SC Date (29xx)
     }
     else if (args.length == 1) {
-      //Calendar, basically, which should pull the next week or two of events from
-      //whatever database or textfile this connects to. 
-      message.channel.send(_error.not_yet_implemented);
+      if (args[0] == "?")
+      {
+          message.channel.send(_sadi.cmd_help);
+      }else{
+        //Calendar, basically, which should pull the next week or two of events from
+        //whatever database or textfile this connects to. 
+        message.channel.send(_error.not_yet_implemented);
+      }
     }
     else if (args.length >= 2)
     {
@@ -57,7 +63,7 @@ module.exports={
         case "-n":
         case "-m":
         case "-r":
-        case "-z":
+        case "-t":
           //message.channel.send(_error.not_yet_implemented);
           var _json = null;
           switch(args[0].toLowerCase()){
@@ -71,9 +77,9 @@ module.exports={
             case "-r":
               _json = shipCmd.QueryShipsByRole(args[1]);
               break;
-            case "-z":
-              _json = shipCmd.QueryShipsBySize(args[1]);
-              break;
+            case "-t":
+              _json = shipCmd.QueryShipsByType(args[1]);
+              break;            
           }
           ShipDisplay(_json, message);
           break;
@@ -94,7 +100,18 @@ function ShipDisplay(json, message)
     //If the json has multiple objects, we need to include
     //the reaction footer. Otherwise, we can just pin the
     //  data there and be done. 
+    console.log(`Count: ${json.length}`);
     if (json.length > 0){
+      var _varients="| ";
+      if (json.length > 1)
+      {
+        json.forEach(ship=>{
+          _varients += ship.name + " | ";
+        });
+      }else{
+        _varients = "None";
+      }
+
       var _data = json[0];
       var _mbed = {
         color: 0x0099ff,
@@ -105,18 +122,19 @@ function ShipDisplay(json, message)
         fields:[
           {name:"Status", value:_data.production_status, inline: true},
           {name:"Role", value:_data.focus, inline: true},
-          {name: "\u200b", value: "\u200b"},
+          {name:"Type", value:_data.type, inline: true},
+
           {name:"Max Crew", value:_data.crew.split("/")[1], inline: true},
-          {name:"Max Cargo", value:_data.cargocapacity == null ? "0": _data.cargocapacity, inline: true},
+          {name:"Max Cargo", value:_data.cargocapacity, inline: true},
           {name:"Size", value:_data.size, inline: true},
+          
+          {name:"Varients", value:_varients}
         ],
         footer: {
           text:"Data courtesy of starcitizen-api.com"
         }
       }
-      message.channel.send({embed:_mbed})
-      .then(sent=>sent.react(_reactions.previous)
-        .then(()=>sent.react(_reactions.next)));
+      message.channel.send({embed:_mbed});
     }else{
       message.channel.send("Sorry! That ship was not found.")
     }

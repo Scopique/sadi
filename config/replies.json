@@ -29,6 +29,7 @@
       "no_ship":"Sorry. That ship has not yet been registered with the UEE.",
       "no_system":"Sorry. Information on that star system is classified by order of the UEE.",
       "ship_error":"Oh dear. It seems that this part of the ship database has been corrupted. I could not find the data you requested.",
-      "system_error":"Oh...How embarassing. I cannot find information on that star system. I will file a report with the administration on your behalf."
+      "system_error":"Oh...How embarassing. I cannot find information on that star system. I will file a report with the administration on your behalf.",
+      "cmd_help":"\nCOMMAND HELP\nSHIPS\n---------------\n-n [SHIP NAME]: Search by name. Enclose critera in quotes to search for specific ships.\n-m [MANUFACTURER]: Search by manufacturer. Enclose critera in quotes to search for specific companies.\n-r [ROLE]: Search by role.\n-t [TYPE]: Search by type."
     }
 }

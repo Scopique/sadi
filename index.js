@@ -19,7 +19,6 @@ const Discord = require('discord.js');
 const config = require("./config/config.json");
 const fileops = require("./lib/fileaccess.js");
 const replies = require("./config/replies.json");
-const rxcore = require("reaction-core");
 
 /***************************************************************
  *                       OBJECT SETUP
@@ -27,7 +26,6 @@ const rxcore = require("reaction-core");
 const client = new Discord.Client();
 const commands = new Discord.Collection();
 const events = new Discord.Collection();
-const rxhandler = new RC.Handler();
 
 /***************************************************************
  *                       ASSIGNMENTS
@@ -60,18 +58,15 @@ client.on("message", (message) => {
     if (!message.content.startsWith(config.prefix) || message.author.bot) return;
 
     //Get the args, space separated.
-    const args = message.content.slice(config.prefix.length).split(/ +/);
+    //const args = message.content.slice(config.prefix.length).split(/ +/);
+    const args = parseCmd(message.content.slice(config.prefix.length));
     const commandName = args.shift().toLowerCase();
-    //Check the command (first arg) against the command list, 
-    //and if unrecognized, bail out.
-    if (!commands.has(commandName)) return;
 
+    //Check the command (first arg) against the command list, and if unrecognized, bail out.
+    if (!commands.has(commandName)) return;
     const command = commands.get(commandName);
 
     try {
-        //Commands have matching modules, so we will execute the command
-        //  based on the name of the command matching a command in the .commands
-        //  directory, which was parsed via the FileOps.LoadCommands function
         console.log(`Command ${commandName} issued by ${message.author.username} with args ${args}`);
         command.execute(message, args, core);
     } catch (e) {
@@ -79,8 +74,6 @@ client.on("message", (message) => {
        message.channel.send(`Oops! That command didn't work! Usage is ${command.usage}`);
     }
 });
-
-client.on("messageReactionAdd", (messageReaction, user)=>handler.handle(messageReaction, user));
 
 client.on("guildMemberUpdate", function(oldData, newData){
   // const removedRoles = oldData.roles.filter(role => !newData.roles.has(role.id));
@@ -110,7 +103,8 @@ client.on("raw", async event=>{
             let cmdLobby = commands.find(n=>n.name === "lobby");
             cmdLobby.HandleLobbyReaction(core, event);
         }else{
-
+          //This will fire for ANY reaction interaction that doesn't happen inside the lobby
+          //We somehow need to determine if this message is an embed with cycle reactions
         }
     }
     else if(event.t === "GUILD_MEMBER_UPDATE"){
@@ -126,3 +120,20 @@ client.on("raw", async event=>{
 
 //Login to Discord
 client.login(token);
+
+//Allow for the use of command criteria with spaces, assuming
+//that quotes are used. Can use " or ' or `
+function parseCmd(cmd){
+  var args = [];
+  if (cmd.includes('\"'))
+    {
+      //!sadi,,-n,,mustang alpha"
+      args = cmd.split(/\s(?=(?:[^'"`]*(['"`])[^'"`]*\1)*[^'"`]*$)/g)
+      .map(el=>el.replace("\"", ""))
+      .map(el=>el.replace("\"", ""))
+      .filter(el=>{return el.length > 0});
+    }else{
+      args = cmd.split(/ +/);
+    }
+  return args
+}
