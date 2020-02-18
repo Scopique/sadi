@@ -21,7 +21,8 @@ module.exports={
     description:"Requires new users arriving via invite link to agree to the server EULA before accessing the server.",
     args:false,
     usage:"[Channel_Name][Role_To_Grant] | reset | remove",
-    execute(message, args, settings){
+    execute(message, args, core){
+      const {client:client, settings:settings} = core;
         //0 args will print the usage
         //1 arg is either rebuild or remove
         //2 args is assignment
@@ -115,7 +116,7 @@ module.exports={
                         okUser.addRole(settings.lobby.acceptRoleID);  
                         console.log(`${user.username} was granted the ${settings.lobby.acceptRole} role`);
                         //DM them something welcoming them to the server. Should be configurable by the admin somehow.
-
+                        
                       const _newDM = okUser.createDM();
                       _newDM.then((ch)=>{
                         ch.send(_sadi.welcome_dm);

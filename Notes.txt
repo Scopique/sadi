@@ -16,5 +16,19 @@ https://uptimerobot.com/
 Star Citizen API (Unofficial)
 https://starcitizen-api.com/startup.php
 
-AWS Web Server and Database with Amazon Linux
-https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/TUT_WebAppWithRDS.html
+MySQL Library
+https://github.com/mysqljs/mysql#readme
+
+Creating a webhook using 3rd party service
+https://gist.github.com/jagrosh/7606268fc9f1d3e90ce9efc79294f960
+
+Promises with MySQL.js
+https://codeburst.io/node-js-mysql-and-promises-4c3be599909b
+or promise-mysql
+https://github.com/CodeFoodPixels/node-promise-mysql
+or Promisify in node.js
+https://codeburst.io/quick-dig-promisify-in-node-js-6d5d763f847d
+
+Async/await with mysql.js
+https://codeburst.io/node-js-mysql-and-async-await-6fb25b01b628
+https://nodejs.org/api/util.html#util_util_promisify_original
