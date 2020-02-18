@@ -9,9 +9,26 @@ This will search the API for a _released_ ship and display the information in th
 
 [SHIPNAME] can be the ship's model (Constellation, Aurora) or a variant (Black, MR). It cannot be a full name (Constellation Taurus). Subsequent searches for the same model, whether by the original user or other users, will return the next variant in the list. When all variants have been returned, the list will loop back to the first.
 
+_Search variations_
+
+These shorthand switch variations allow for quicker input, and canbe used for advanced searching.
+
+* -n: Query by the name of the ship. Same as !sadi ship [SHIPNAME]
+* -m: Query my manufacturer name.
+* -r: Query by ship's assigned role.
+* -t: Query by ship type.
+
 __!sadi system [SYSTEM_NAME]__
 
 This searches the API for information about the provided star system. At the time of this update, there is only one playable system available (Stanton), although it seems that there are a lot of systems in the database. 
+
+You can use the _-s_ switch in place of _system_ in the command for shorthand.
+
+__!sadi object [OBJECT NAME]__
+
+This command will search the API for an _object_ by name. An object in the API data refers to planets, stations, outposts, landing zones, etc. The success of this command will depend on the data backing the API, and at the time of this posting, the data was incomplete. 
+
+You can use the _-o_ switch in place of _object_ in the command shorthand.
 
 ## Admin Functions
 
@@ -26,3 +43,13 @@ Once the !setlobby command has been used, new visitors will be asked to review t
 Specifying the _reset_ argument as the only argument to the comand will remove the existing post in the lobby channel and repost it at the very bottom of the channel. Use this to ensure that the reactions are placed as the last entry in the channel. 
 
 You can remove the post and the lobby reference from the bot by using the _remove_ command as the only argument. This will de-register the channel as the lobby, and will remove the confirmation post. 
+
+__!admin refresh [override]__
+
+Using the _refresh_ command will attempt to re-download a local copy of the API data. By default, this is on a 24 hour limit timer so as not to overload good graces of the API. Adding the _override_ parameter to the end of the command, however, will force the bot to pull a refresh regardless of the timer. Please use sparingly. 
+
+__!admin cleanup__
+
+In order to prevent the bot from constantly pinging the API and to perform a data reorganization for the bot operations, S.A.D.I. will cache a local copy of the latest API data for ships, objects, and locations. Part of this process involves transforming the API data into a "flatter" structure that's quicker and easier for the bot to use. This process is called _cleaning the data_. This is automatically performed at the end of a _refresh_ operation, but should you need to convert the raw data files into the useable format, this command can be executed manually. If the files are up to date, then this process will simply overwrite the useable files with the exact same data. 
+
+
