@@ -52,4 +52,30 @@ __!admin cleanup__
 
 In order to prevent the bot from constantly pinging the API and to perform a data reorganization for the bot operations, S.A.D.I. will cache a local copy of the latest API data for ships, objects, and locations. Part of this process involves transforming the API data into a "flatter" structure that's quicker and easier for the bot to use. This process is called _cleaning the data_. This is automatically performed at the end of a _refresh_ operation, but should you need to convert the raw data files into the useable format, this command can be executed manually. If the files are up to date, then this process will simply overwrite the useable files with the exact same data. 
 
+## CONFIG.json Format
 
+The config.json is simple: One node, specifying what the command prefix should be.
+
+{
+    "prefix":"!"
+}
+
+## .env File Contents
+
+There are several constants referenced in the .env file. As this is a more secure file, it's where the bot will pull things like the Discord and SCAPI client keys. 
+
+Note that you will need to set up your own Discord dev account and register your own Discord bot account to get your secret and key. You will also need to register with SCAPI to get a key for their service as well. 
+
+DISCORD_BOT_SECRET=[Discord issued secret key]
+
+RSI_BASE_URI=https://www.robertsspaceindustries.com
+
+SC_API_KEY=[SCAPI issued client key]
+
+SC_API_SHIPS_URI=https://api.starcitizen-api.com/[SCAPI issued client key]/v1/cache/ships
+SC_API_SYSTEMS_URI=https://api.starcitizen-api.com/[SCAPI issued client key]/v1/cache/starmap/systems
+SC_API_TUNNELS_URI=https://api.starcitizen-api.com/[SCAPI issued client key]/v1/cache/starmap/tunnels
+SC_API_SPECIES_URI=https://api.starcitizen-api.com/[SCAPI issued client key]/v1/cache/starmap/species
+SC_API_AFFILIATIONS_URI=https://api.starcitizen-api.com/[SCAPI issued client key]/v1/cache/starmap/affiliations
+SC_API_OBJECTS_URI=https://api.starcitizen-api.com/[SCAPI issued client key]/v1/cache/starmap/object
+SC_API_SEARCHES_URI=https://api.starcitizen-api.com/[SCAPI issued client key]/v1/live/starmap/search
