@@ -23,7 +23,7 @@
   "dependencies": {
     "discord.js": "^11.5.1",
     "moment": "^2.24.0",
-    "node-fetch": "^2.6.1",
+    "node-fetch": "^2.6.7",
     "utils": "^0.3.1"
   }
 }
